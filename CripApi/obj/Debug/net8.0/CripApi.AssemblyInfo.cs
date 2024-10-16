@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CripApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43f8a5ddb64b423e8b7e32f43ca5500715e539cb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+85392bc5f86b4e625f31a79bf31774739c66342d")]
 [assembly: System.Reflection.AssemblyProductAttribute("CripApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CripApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

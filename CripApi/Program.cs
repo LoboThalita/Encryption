@@ -11,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IEncryptionService, EncryptionService>();
+builder.Services.AddScoped<IDecryptionService, DecryptionService>();
 
 var app = builder.Build();
 
