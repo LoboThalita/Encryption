@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "Hash": "cfLAZt29LKW9iF4WFOx1UP2JkYqPQzKN1N+kErqvdas=",
+  "Source": "FrontEnd",
+  "BasePath": "_content/FrontEnd",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "FrontEnd\\wwwroot",
+      "Source": "FrontEnd",
+      "ContentRoot": "C:\\Users\\thalita.paz\\Documents\\ESTUDOS\\FATEC\\ProgramacaoLinear\\CripApi\\FrontEnt\\wwwroot\\",
+      "BasePath": "_content/FrontEnd",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\thalita.paz\\Documents\\ESTUDOS\\FATEC\\ProgramacaoLinear\\CripApi\\FrontEnt\\wwwroot\\index.css",
+      "SourceId": "FrontEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\thalita.paz\\Documents\\ESTUDOS\\FATEC\\ProgramacaoLinear\\CripApi\\FrontEnt\\wwwroot\\",
+      "BasePath": "_content/FrontEnd",
+      "RelativePath": "index.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.css"
+    },
+    {
+      "Identity": "C:\\Users\\thalita.paz\\Documents\\ESTUDOS\\FATEC\\ProgramacaoLinear\\CripApi\\FrontEnt\\wwwroot\\index.html",
+      "SourceId": "FrontEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\thalita.paz\\Documents\\ESTUDOS\\FATEC\\ProgramacaoLinear\\CripApi\\FrontEnt\\wwwroot\\",
+      "BasePath": "_content/FrontEnd",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
+}

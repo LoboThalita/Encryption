@@ -6,7 +6,7 @@ namespace CripApi.Services;
 
 public class EncryptionService : IEncryptionService
 {
-    public string EncryptText(string text)
+    public EncryptedText EncryptText(string text)
     {
         GenerateKeys(out int n, out int e, out int d);
 
@@ -20,10 +20,8 @@ public class EncryptionService : IEncryptionService
             encryptedtext.Append(crypted.ToString() + " ");
         }
 
-        EncryptedText encrypted = new(encryptedtext.ToString(), (e, n), (d, n), text);
-        return encrypted.ToString();
+        return new EncryptedText(text, encryptedtext.ToString(), e, d, n);
     }
-
     private static void GenerateKeys(out int n, out int e, out int d)
     {
         Random random = new();

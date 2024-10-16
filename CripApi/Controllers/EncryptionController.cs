@@ -1,4 +1,5 @@
-﻿using CripApi.Models.Interfaces;
+﻿using CripApi.Models.Entities.Requests;
+using CripApi.Models.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CripApi.Controllers;
@@ -11,16 +12,16 @@ public class EncryptionController(IEncryptionService encryptionService, IDecrypt
     private readonly IDecryptionService _decryptionService = decryptionService;
 
     [HttpPost("criptografar")]
-    public IActionResult Criptografar(string text)
+    public IActionResult Criptografar([FromBody] EncryptRequest encryptRequest)
     {
-        var resultado = _encryptionService.EncryptText(text);
+        var resultado = _encryptionService.EncryptText(encryptRequest.Text);
         return Ok(resultado);
     }
 
     [HttpPost("descriptografar")]
-    public IActionResult Descriptografar(string encryptedText, int privateKey, int n)
+    public IActionResult Descriptografar(DecryptRequest decryptRequest)
     {
-        var resultado = _decryptionService.DecryptText(encryptedText, privateKey, n);
+        var resultado = _decryptionService.DecryptText(decryptRequest.EncryptedText, decryptRequest.PrivateKey, decryptRequest.N);
         return Ok(resultado);
     }
 }

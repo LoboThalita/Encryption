@@ -1,6 +1,8 @@
-﻿namespace CripApi.Models.Interfaces;
+﻿using CripApi.Models.Entities;
+
+namespace CripApi.Models.Interfaces;
 
 public interface IEncryptionService
 {
-    string EncryptText(string text);
+    EncryptedText EncryptText(string text);
 }

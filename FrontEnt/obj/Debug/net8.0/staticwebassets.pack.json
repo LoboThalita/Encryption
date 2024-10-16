@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\thalita.paz\\Documents\\ESTUDOS\\FATEC\\ProgramacaoLinear\\CripApi\\FrontEnt\\wwwroot\\index.css",
+      "PackagePath": "staticwebassets\\index.css"
+    },
+    {
+      "Id": "C:\\Users\\thalita.paz\\Documents\\ESTUDOS\\FATEC\\ProgramacaoLinear\\CripApi\\FrontEnt\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.FrontEnd.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.FrontEnd.props",
+      "PackagePath": "build\\FrontEnd.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.FrontEnd.props",
+      "PackagePath": "buildMultiTargeting\\FrontEnd.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.FrontEnd.props",
+      "PackagePath": "buildTransitive\\FrontEnd.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

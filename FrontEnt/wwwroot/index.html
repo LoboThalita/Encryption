@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Criptografia e Descriptografia de Texto</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Criptografia e Descriptografia</h1>
+
+        <!-- Bloco para Criptografia -->
+        <div class="block">
+            <h2>Criptografar Texto</h2>
+            <textarea id="inputTextEncrypt"
+                      placeholder="Digite o texto para criptografar"
+                      required></textarea>
+            <button onclick="criptografar()">Criptografar</button>
+        </div>
+
+        <!-- Bloco para Descriptografia -->
+        <div class="block">
+            <h2>Descriptografar Texto</h2>
+            <textarea id="inputTextDecrypt"
+                      placeholder="Digite o texto para descriptografar"
+                      required></textarea>
+            <input type="number"
+                   id="privateKey"
+                   placeholder="Digite sua chave privada"
+                   required />
+            <input type="number"
+                   id="index"
+                   placeholder="Digite o índice"
+                   required />
+            <button onclick="descriptografar()">Descriptografar</button>
+        </div>
+
+        <div class="result" id="outputText">
+            <p id="toriginal"></p>
+            <p id="tcripto"></p>
+            <p id="publica"></p>
+            <p id="privada"></p>
+        </div>
+    </div>
+
+    <script>
+        function criptografar() {
+            const inputText = $('#inputTextEncrypt').val();
+
+            if (!inputText) {
+                $('#outputText').text('Por favor, insira o texto para criptografar.');
+                return;
+            }
+            console.log("Texto: " + inputText);
+
+            $.ajax({
+                url: 'https://localhost:7090/api/Encryption/criptografar',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    text: inputText,
+                }),
+                success: function (data) {
+
+                    $('#toriginal').text('Texto original: ' + data.originalText);
+                    $('#tcripto').text('Texto criptografado: ' + data.encrypted);
+                    $('#publica').text('Chave pública(e, n): ' + data.publicKey + ' , ' + data.n);
+                    $('#privada').text('Chave privada(d, n): ' + data.privateKey + ' , ' + data.n);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    $('#outputText').text('Erro ao conectar-se à API de criptografia: ' + textStatus);
+                }
+            });
+        }
+
+        function descriptografar() {
+            const inputText = $('#inputTextDecrypt').val();
+            const privateKey = $('#privateKey').val();
+            const index = $('#index').val();
+
+            if (!inputText || !privateKey || !index) {
+                $('#outputText').text('Por favor, preencha todos os campos para descriptografar.');
+                return;
+            }
+
+            $.ajax({
+                url: 'https://localhost:7090/api/Encryption/descriptografar',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    EncryptedText: inputText,
+                    PrivateKey: parseInt(privateKey),
+                    N: parseInt(index)
+                }),
+                success: function (data) {
+                    $('#outputText').text(data);
+
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    $('#outputText').text('Erro ao conectar-se à API de descriptografia: ' + textStatus);
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>
