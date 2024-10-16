@@ -1,29 +1,25 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CripApi.Models.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CripApi.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class EncryptionController : ControllerBase
+public class EncryptionController(IEncryptionService service) : ControllerBase
 {
-    private readonly ICriptografiaService _service;
-
-    public EncryptionController(ICriptografiaService service)
-    {
-        _service = service;
-    }
+    private readonly IEncryptionService _service = service;
 
     [HttpPost("criptografar")]
-    public IActionResult Criptografar([FromBody] string texto)
+    public IActionResult Criptografar(string text)
     {
-        var resultado = _service.CriptografarTexto(texto);
+        var resultado = _service.EncryptText(text);
         return Ok(resultado);
     }
 
     [HttpPost("descriptografar")]
-    public IActionResult Descriptografar([FromBody] string textoCriptografado)
+    public IActionResult Descriptografar(string encryptedText, int privateKey, int n)
     {
-        var resultado = _service.DescriptografarTexto(textoCriptografado);
+        var resultado = _service.DecryptText(encryptedText, privateKey, n);
         return Ok(resultado);
     }
 }

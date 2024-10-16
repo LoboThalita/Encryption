@@ -3,5 +3,5 @@
 public interface IEncryptionService
 {
     string EncryptText(string text);
-    string DecryptText(string encryptedtext);
+    string DecryptText(string encryptedText, int privateKey, int n);
 }
